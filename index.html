@@ -289,6 +289,119 @@
         font-size: 1.7rem;
       }
     }
+    
+/* Core Expertise: consistent alignment and spacing */
+#expertise .section-intro,
+#certifications .section-intro {
+  max-width: 760px;
+  margin: 0 0 28px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+#expertise .grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+}
+
+#expertise .card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  padding: 24px;
+  text-align: left;
+}
+
+#expertise .card h3 {
+  margin: 0 0 12px;
+  line-height: 1.4;
+  min-height: 1.4em;
+}
+
+#expertise .card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+#expertise .card .tags {
+  margin-top: auto;
+  padding-top: 4px;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+#expertise .card .tag {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+/* Certifications: aligned, readable credential rows */
+#certifications .cert-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#certifications .cert-list li {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  margin: 0;
+  padding: 17px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+#certifications .cert-list li::before {
+  content: "✓";
+  flex: 0 0 auto;
+  margin-right: 11px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  #expertise .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #expertise .grid,
+  #certifications .cert-list {
+    grid-template-columns: 1fr;
+  }
+
+  #expertise .card {
+    padding: 20px;
+  }
+
+  #expertise .card h3 {
+    min-height: 0;
+  }
+
+  #certifications .cert-list li {
+    padding: 15px;
+  }
+}
   </style>
 </head>
 
