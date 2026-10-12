@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rahul Bansal - VMware VCF, Cloud Infrastructure, Automation and DevOps Consultant.">
   <meta name="theme-color" content="#0b1220">
-  <title>Rahul Bansal | Cloud & Infrastructure Consultant</title>
+  <title>Rahul Bansal | VMware VCF & Enterprise Infrastructure</title>
 
   <style>
+
     :root {
       --bg: #0b1220;
       --panel: #111c2e;
@@ -18,15 +18,11 @@
       --border: #26364d;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
+      scroll-padding-top: 90px;
     }
 
     body {
@@ -34,28 +30,26 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      overflow-wrap: break-word;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    img { display: block; max-width: 100%; }
 
     .container {
       width: min(1100px, 90%);
-      margin: auto;
+      margin-inline: auto;
     }
 
     header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(11, 18, 32, 0.96);
+      background: rgba(11, 18, 32, 0.97);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     nav {
@@ -72,29 +66,38 @@
       color: var(--text);
       font-size: 1.2rem;
       font-weight: 700;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      align-items: center;
+      gap: 18px;
       font-size: 0.94rem;
     }
 
-    .nav-links a {
-      color: var(--muted);
-    }
+    .nav-links a { color: var(--muted); }
 
     .hero {
-      padding: 95px 0 80px;
-      background:
-        radial-gradient(ellipse at top right, #18365a 0%, transparent 55%);
+      padding: 88px 0 76px;
+      background: radial-gradient(ellipse at top right, #18365a 0%, transparent 58%);
+      border-top: 0;
     }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero-copy { min-width: 0; }
 
     .eyebrow {
       color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       font-size: 0.82rem;
       font-weight: 700;
     }
@@ -106,21 +109,37 @@
       letter-spacing: -1.5px;
     }
 
-    h1 span {
-      color: var(--accent);
-    }
+    h1 span { color: var(--accent); }
 
-    .hero p {
+    .hero-summary {
       max-width: 730px;
       color: var(--muted);
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .hero-summary .specialties {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero-photo {
+      width: 240px;
+      height: 280px;
+      object-fit: cover;
+      object-position: center 25%;
+      border-radius: 24px;
+      border: 2px solid var(--border);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .button {
@@ -129,59 +148,64 @@
       border-radius: 7px;
       font-weight: 700;
       border: 1px solid var(--accent);
+      text-align: center;
     }
 
-    .button.primary {
-      background: var(--accent);
-      color: #08111f;
-    }
+    .button.primary { background: var(--accent); color: #08111f; }
+    .button.secondary { color: var(--text); }
 
-    .button.secondary {
-      color: var(--text);
-    }
-
-    section {
-      padding: 65px 0;
-      border-top: 1px solid var(--border);
-    }
+    section { padding: 64px 0; border-top: 1px solid var(--border); }
 
     .section-heading {
       font-size: 2rem;
+      line-height: 1.25;
       margin-bottom: 10px;
     }
 
     .section-intro {
       color: var(--muted);
       max-width: 760px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
+      font-size: 1rem;
+      line-height: 1.75;
     }
 
     .about-text {
       color: var(--muted);
       max-width: 850px;
+      line-height: 1.85;
     }
+
+    .about-text p + p { margin-top: 18px; }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
       gap: 20px;
+      width: 100%;
     }
 
     .card {
+      min-width: 0;
+      height: 100%;
       background: var(--panel);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
+      text-align: left;
     }
 
     .card h3 {
-      font-size: 1.12rem;
+      font-size: 1.1rem;
+      line-height: 1.4;
       margin-bottom: 12px;
     }
 
     .card p {
       color: var(--muted);
       font-size: 0.95rem;
+      line-height: 1.7;
     }
 
     .card a {
@@ -193,27 +217,63 @@
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 20px;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 18px;
     }
 
     .tag {
       display: inline-block;
+      max-width: 100%;
       background: #1a2a41;
       border: 1px solid var(--border);
       color: #dbeafe;
-      padding: 5px 11px;
+      padding: 5px 10px;
       border-radius: 20px;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      overflow-wrap: normal;
+      word-break: normal;
     }
 
+    /* Core Expertise */
+    #expertise .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    #expertise .card { display: flex; flex-direction: column; }
+    #expertise .card .tags { margin-top: auto; padding-top: 18px; }
+
+    /* Certifications: readable, consistent rows */
     .cert-list {
-      padding-left: 22px;
-      color: var(--muted);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 18px;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      list-style: none;
     }
 
     .cert-list li {
-      margin: 12px 0;
+      display: flex;
+      align-items: flex-start;
+      min-width: 0;
+      margin: 0;
+      padding: 16px 18px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.65;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    .cert-list li::before {
+      content: "✓";
+      flex: 0 0 auto;
+      margin-right: 10px;
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .contact-card {
@@ -231,177 +291,30 @@
       font-size: 0.9rem;
     }
 
-.hero-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  align-items: center;
-  gap: 50px;
-}
-
-.hero-photo {
-  width: 240px;
-  height: 280px;
-  object-fit: cover;
-  object-position: center 25%;
-  border-radius: 24px;
-  border: 2px solid #26364d;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 760px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .hero-photo {
-    width: 180px;
-    height: 210px;
-  }
-}
-
-
-    @media (max-width: 760px) {
-      .grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero {
-        padding: 65px 0;
-      }
-
-      .nav-links {
-        gap: 12px;
-      }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: minmax(0, 1fr) 200px; gap: 30px; }
+      .hero-photo { width: 200px; height: 240px; }
+      .grid, #expertise .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
-    @media (max-width: 520px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links {
-        width: 100%;
-        font-size: 0.88rem;
-      }
-
-      .section-heading {
-        font-size: 1.7rem;
-      }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 36px, 520px); }
+      nav { align-items: flex-start; gap: 10px; padding: 14px 0; }
+      .nav-links { width: 100%; gap: 8px 14px; font-size: 0.88rem; }
+      .hero { padding: 52px 0 48px; }
+      .hero-layout { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+      .hero-photo { width: 170px; height: 200px; }
+      h1 { font-size: clamp(2.1rem, 9vw, 3rem); letter-spacing: -0.8px; }
+      .hero-summary { font-size: 1rem; }
+      .buttons { flex-direction: column; align-items: stretch; }
+      .button { width: 100%; }
+      section { padding: 48px 0; }
+      .section-heading { font-size: 1.7rem; }
+      .grid, #expertise .grid, .cert-list { grid-template-columns: minmax(0, 1fr); }
+      .card { padding: 20px; }
+      .contact-card { padding: 22px; }
     }
-    
-/* Core Expertise: consistent alignment and spacing */
-#expertise .section-intro,
-#certifications .section-intro {
-  max-width: 760px;
-  margin: 0 0 28px;
-  color: var(--muted);
-  font-size: 1rem;
-  line-height: 1.75;
-}
 
-#expertise .grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 22px;
-}
-
-#expertise .card {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  height: 100%;
-  padding: 24px;
-  text-align: left;
-}
-
-#expertise .card h3 {
-  margin: 0 0 12px;
-  line-height: 1.4;
-  min-height: 1.4em;
-}
-
-#expertise .card p {
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-size: 0.96rem;
-  line-height: 1.7;
-}
-
-#expertise .card .tags {
-  margin-top: auto;
-  padding-top: 4px;
-  align-content: flex-start;
-  align-items: flex-start;
-  gap: 8px;
-}
-
-#expertise .card .tag {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-  line-height: 1.5;
-}
-
-/* Certifications: aligned, readable credential rows */
-#certifications .cert-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px 18px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-#certifications .cert-list li {
-  display: flex;
-  align-items: flex-start;
-  min-width: 0;
-  margin: 0;
-  padding: 17px 18px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: var(--muted);
-  font-size: 0.96rem;
-  line-height: 1.65;
-  overflow-wrap: anywhere;
-}
-
-#certifications .cert-list li::before {
-  content: "✓";
-  flex: 0 0 auto;
-  margin-right: 11px;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  #expertise .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  #expertise .grid,
-  #certifications .cert-list {
-    grid-template-columns: 1fr;
-  }
-
-  #expertise .card {
-    padding: 20px;
-  }
-
-  #expertise .card h3 {
-    min-height: 0;
-  }
-
-  #certifications .cert-list li {
-    padding: 15px;
-  }
-}
   </style>
 </head>
 
@@ -422,68 +335,33 @@
   </header>
 
   <main>
-    <section class="hero" id="home" style="border-top: 0;">
+    <section class="hero" id="home">
       <div class="container">
         <div class="hero-layout">
           <div class="hero-copy">
-            <div class="eyebrow">Senior VMware VCF & Enterprise Infrastructure Consultant</div>
-
-        <h1>
-          Hello, I build <br>
-          <span> Reliable Infrastructure.</span>
-        </h1>
-
-        <p>
-          VMware Cloud Foundation | vSphere | ESXi | vCenter | Infrastructure Automation | Hybrid Cloud
-
-          VMware VCF and enterprise infrastructure specialist with
-          15+ years of IT experience, focused on virtualization,
-          cloud infrastructure, automation, and modern deployment technologies.
-          
-          I design, support and modernize enterprise infrastructure platforms, 
-          specializing in VMware virtualization and VMware Cloud Foundation. 
-          I also leverage cloud technologies and automation to improve infrastructure reliability, operational efficiency and scalability.
-        </p>
-
-        <div class="buttons">
-          <a class="button primary"
-             href="https://github.com/rahul-tech007?tab=repositories">
-            Explore My Projects
-          </a>
-
-          <a class="button secondary"
-             href="https://www.linkedin.com/in/rahulbansal1801/"
-             target="_blank" rel="noopener noreferrer">
-            Connect on LinkedIn
-          </a>
-        </div>
-
-            <div class="tags">
+            <div class="eyebrow">Senior VMware VCF &amp; Enterprise Infrastructure Consultant</div>
+            <h1>
+              I build<br>
+              <span>Reliable Infrastructure.</span>
+            </h1>
+            <p class="hero-summary">
+              <span class="specialties">VMware Cloud Foundation | vSphere | ESXi | vCenter | Infrastructure Automation | Hybrid Cloud</span>
+              VMware VCF and enterprise infrastructure specialist with 15+ years of IT experience, focused on virtualization, cloud infrastructure, automation, and modern deployment technologies. I design, support, and modernize enterprise infrastructure platforms, using cloud technologies and automation to improve reliability, operational efficiency, and scalability.
+            </p>
+            <div class="buttons">
+              <a class="button primary" href="#projects">Explore My Projects</a>
+              <a class="button secondary" href="https://www.linkedin.com/in/rahulbansal1801/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+            </div>
+            <div class="tags" aria-label="Key skills">
               <span class="tag">VMware VCF</span>
-              <span class="tag">Cloud Infrastructure</span>
+              <span class="tag">Enterprise Infrastructure</span>
               <span class="tag">Terraform</span>
               <span class="tag">AWS</span>
               <span class="tag">Kubernetes</span>
               <span class="tag">Automation</span>
             </div>
           </div>
-
-         <section class="hero" id="home" style="border-top: 0;">
-            <div class="container">
-            <div class="hero-layout">
-
-            <div class="hero-copy">
-            <!-- Keep your existing headline, description,
-             buttons, and skill tags here -->
-            </div>
-
-      <img
-        class="hero-photo"
-        src="rahul_github_profile.jpg"
-        alt="Rahul Bansal, Technical Consultant"
-        width="240"
-        height="280"
-      >
+          <img class="hero-photo" src="rahul_github_profile.jpg" alt="Rahul Bansal, Technical Consultant" width="240" height="280">
         </div>
       </div>
     </section>
@@ -492,28 +370,12 @@
       <div class="container">
         <h2 class="section-heading">About Me</h2>
 
-        <p class="about-text">
-          I am an enterprise infrastructure professional with 15+ years of experience across IT infrastructure, 
-          virtualization, platform operations and infrastructure transformation.
-          
-          My professional journey began with enterprise systems and Windows infrastructure, 
-          progressed into VMware technologies—including ESXi, 
-          vCenter and vSphere—and expanded into complex virtualization environments and modern software-defined data center platforms.
-          
-          Today, my primary focus is VMware Cloud Foundation (VCF) and enterprise infrastructure. 
-          I bring hands-on experience across virtualization platforms, infrastructure operations, migrations, automation 
-          and technical problem-solving in enterprise environments.
-
-          <br><br>
-
-          Alongside my VMware expertise, I work with AWS, Microsoft Azure and Google Cloud, using tools such as Terraform, 
-          Ansible and scripting to support infrastructure automation and modernization. 
-          My experience with Docker, Kubernetes, CI/CD and observability further complements my infrastructure background.
-          
-          I combine established enterprise infrastructure knowledge with modern automation and 
-          cloud capabilities to help build reliable, scalable and operationally efficient platforms.
-          
-        </p>
+        <div class="about-text">
+          <p>I am an enterprise infrastructure professional with 15+ years of experience across IT infrastructure, virtualization, platform operations, and infrastructure transformation.</p>
+          <p>My professional journey began with enterprise systems and Windows infrastructure, progressed into VMware technologies—including ESXi, vCenter, and vSphere—and expanded into complex virtualization environments and modern software-defined data center platforms.</p>
+          <p>Today, my primary focus is VMware Cloud Foundation (VCF) and enterprise infrastructure. I bring experience across virtualization platforms, infrastructure operations, migrations, automation, and technical problem-solving in enterprise environments.</p>
+          <p>Alongside my VMware expertise, I work with AWS, Microsoft Azure, and Google Cloud, using tools such as Terraform, Ansible, and scripting to support infrastructure automation and modernization. My experience with Docker, Kubernetes, CI/CD, and observability further complements my infrastructure background.</p>
+        </div>
       </div>
     </section>
 
@@ -521,17 +383,7 @@
       <div class="container">
         <h2 class="section-heading">Core Expertise</h2>
         <p class="section-intro">
-          VMware & Software-Defined Data Center
-          VMware Cloud Foundation (VCF), NSX, VCF lifecycle operations, SDDC, enterprise virtualization, lifecycle management and infrastructure operations.
-          
-          Enterprise Infrastructure & Automation
-          PowerCLI, PowerShell, infrastructure scripting, platform administration, migration, operational standardization and troubleshooting.
-          
-          Hybrid Cloud & Infrastructure as Code
-          AWS, Azure, Google Cloud, Terraform, Ansible and cloud infrastructure deployment.
-          
-          Containers, DevOps & Observability
-          Docker, Kubernetes, Helm, Git, CI/CD, Argo CD, Prometheus, Grafana and ELK.
+          Enterprise infrastructure and VMware Cloud Foundation are my primary focus, supported by infrastructure automation, hybrid-cloud engineering, and modern platform operations.
         </p>
 
         <div class="grid">
@@ -648,7 +500,7 @@
               Hands-on deployment of microservices using Kubernetes
               Deployments, Services, and Ingress.
             </p>
-            <a href="https://github.com/rahul-tech007?Microservices-Task"
+            <a href="https://github.com/Rahul-tech007/Microservices-Task"
                target="_blank" rel="noopener noreferrer">
               Explore repositories →
             </a>
@@ -657,10 +509,9 @@
           <article class="card">
             <h3>GitOps & Application Delivery</h3>
             <p>
-              Access the UI Objectives Deploy ArgoCD to your Kubernetes cluster,
-              ArgoCD, deploy applications using Git as the source of truth.
+              GitOps workflow using Argo CD to synchronize Kubernetes deployments with a Git repository as the source of truth.
             </p>
-            <a href="https://github.com/rahul-tech007?GitOps-with-ArgoCD"
+            <a href="https://github.com/Rahul-tech007/GitOps-with-ArgoCD"
                target="_blank" rel="noopener noreferrer">
               Explore repositories →
             </a>
@@ -672,7 +523,7 @@
               Stream premium video content, host live watch parties
               manage your catalogue with a modern microservice architecture
             </p>
-            
+
             <a href="https://github.com/Rahul-tech007/StreamingApp"
                target="_blank" rel="noopener noreferrer">
               Explore repositories →
@@ -682,10 +533,9 @@
           <article class="card">
             <h3>CI/CD Automation</h3>
             <p>
-              Continuous Integration and Continuous Deployment (CI/CD) pipeline for a Flask application using Jenkins,
-              Nginx, process management, and cloud hosting.
+              CI/CD pipeline for a Flask application, demonstrating automated build and deployment workflows.
             </p>
-            <a href="https://github.com/rahul-tech007?flask-cicd-assignment"
+            <a href="https://github.com/Rahul-tech007/flask-cicd-assignment"
                target="_blank" rel="noopener noreferrer">
               Explore repositories →
             </a>
@@ -694,7 +544,7 @@
 
         <div class="buttons">
           <a class="button primary"
-             href="https://github.com/rahul-tech007?tab=repositories"
+             href="https://github.com/Rahul-tech007"
              target="_blank" rel="noopener noreferrer">
             View All GitHub Repositories
           </a>
@@ -751,7 +601,7 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Rahul Bansal · Cloud & Infrastructure
+      © <span id="year"></span> Rahul Bansal · VMware VCF & Enterprise Infrastructure
       <br>
       Built with HTML and CSS · Hosted on GitHub Pages
     </div>
