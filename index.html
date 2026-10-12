@@ -231,6 +231,36 @@
       font-size: 0.9rem;
     }
 
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-photo {
+  width: 240px;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 24px;
+  border: 2px solid #26364d;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 760px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-photo {
+    width: 180px;
+    height: 210px;
+  }
+}
+
+
     @media (max-width: 760px) {
       .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -281,7 +311,9 @@
   <main>
     <section class="hero" id="home" style="border-top: 0;">
       <div class="container">
-        <div class="eyebrow">Technical Consultant | Cloud & Infrastructure</div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="eyebrow">Technical Consultant | Cloud & Infrastructure</div>
 
         <h1>
           Hello, I'm Rahul.<br>
@@ -307,13 +339,23 @@
           </a>
         </div>
 
-        <div class="tags">
-          <span class="tag">VMware VCF</span>
-          <span class="tag">Cloud Infrastructure</span>
-          <span class="tag">Terraform</span>
-          <span class="tag">AWS</span>
-          <span class="tag">Kubernetes</span>
-          <span class="tag">Automation</span>
+            <div class="tags">
+              <span class="tag">VMware VCF</span>
+              <span class="tag">Cloud Infrastructure</span>
+              <span class="tag">Terraform</span>
+              <span class="tag">AWS</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Automation</span>
+            </div>
+          </div>
+
+          <img
+            class="hero-photo"
+            src="rahul_github_profile.jpg"
+            alt="Rahul Bansal, Technical Consultant"
+            width="240"
+            height="280"
+          >
         </div>
       </div>
     </section>
