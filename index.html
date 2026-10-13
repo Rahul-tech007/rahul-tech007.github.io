@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -9,6 +9,18 @@
 
   <style>
 
+  /* Blue major headings in light mode */
+    :root[data-theme="light"] h1,
+    :root[data-theme="light"] h2,
+    :root[data-theme="light"] h3 {
+    color: #172554;
+}
+
+/* Preserve the blue hero accent */
+    :root[data-theme="light"] h1 span {
+    color: #172554;
+}
+
     :root {
       --bg: #0b1220;
       --panel: #111c2e;
@@ -17,6 +29,92 @@
       --accent: #60a5fa;
       --border: #26364d;
     }
+
+/* Light theme variables */
+:root[data-theme="light"] {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #172554;
+  --border: #dbe3ee;
+}
+
+/* Light theme component overrides */
+:root[data-theme="light"] header {
+}
+
+:root[data-theme="light"] .tag {
+  background: #eaf2ff;
+  color: #1e3a5f;
+}
+
+:root[data-theme="light"] .hero {
+  background: radial-gradient(
+    ellipse at top right,
+    #dbeafe 0%,
+    transparent 58%
+  );
+}
+
+/* Blue navigation section in light mode */
+:root[data-theme="light"] header {
+  background: #172554;
+  border-bottom-color: #172554;
+}
+
+:root[data-theme="light"] header .brand,
+:root[data-theme="light"] header .nav-links a {
+  color: #ffffff;
+}
+
+:root[data-theme="light"] header .theme-toggle {
+  background: #ffffff;
+  color: #172554;
+  border-color: #ffffff;
+}
+
+:root[data-theme="light"] header .nav-links a:hover {
+  color: #dbeafe;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+
+
+/* Smooth theme transition */
+body,
+header,
+section,
+.card,
+.vcf-showcase__architecture,
+.vcf-showcase__panel {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -333,7 +431,69 @@
 .vcf-showcase__scope-note { border-left: 4px solid #d6a13d; padding: 12px 16px; background: rgba(214,161,61,.09); color: var(--muted, #b0bfd3); border-radius: 0 8px 8px 0; }
 @media (max-width: 760px) { .vcf-showcase__scenario-grid { grid-template-columns: 1fr; } }
 
-  </style>
+  /* Portfolio typography and red accents */
+body,
+nav,
+button,
+input,
+textarea,
+select {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Use red sparingly for visual emphasis */
+.eyebrow {
+  color: #E30613;
+}
+
+.nav-links a:hover,
+.theme-toggle:hover {
+  color: #E30613;
+  border-color: #E30613;
+}
+
+:root[data-theme="light"] header .nav-links a:hover {
+  color: #E30613;
+}
+
+/* Button contrast fix: readable text on navy backgrounds */
+button,
+a.button,
+.btn,
+.project-card a,
+.hero a {
+    color: #FFFFFF;
+}
+
+button:hover,
+a.button:hover,
+.btn:hover,
+.project-card a:hover,
+.hero a:hover {
+    color: #FFFFFF;
+    background-color: #1E40AF;
+}
+
+/* Fix contrast for portfolio action buttons */
+a.button.primary,
+.vcf-showcase__links a.primary,
+.buttons a.primary {
+    color: #FFFFFF !important;
+}
+
+a.button.primary:hover,
+.vcf-showcase__links a.primary:hover,
+.buttons a.primary:hover {
+    color: #FFFFFF !important;
+    background-color: #1E40AF;
+}
+</style>
 </head>
 
 <body>
@@ -342,13 +502,23 @@
     <nav class="container">
       <a class="brand" href="#home">Rahul Bansal</a>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#projects">Projects</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+
+  <button
+    id="theme-toggle"
+    class="theme-toggle"
+    type="button"
+    aria-label="Switch to light theme"
+    title="Switch theme">
+    <span id="theme-icon" aria-hidden="true">☀</span>
+    <span id="theme-label">Light mode</span>
+  </button>
+</div>
     </nav>
   </header>
 
@@ -359,7 +529,7 @@
           <div class="hero-copy">
             <div class="eyebrow">Senior VMware VCF &amp; Enterprise Infrastructure Consultant</div>
             <h1>
-              I build<br>
+              I Build<br>
               <span>Reliable Infrastructure.</span>
             </h1>
             <p class="hero-summary">
@@ -678,12 +848,62 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
 
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+  (() => {
+    const root = document.documentElement;
+    const button = document.getElementById("theme-toggle");
+    const icon = document.getElementById("theme-icon");
+    const label = document.getElementById("theme-label");
+
+    if (!button || !icon || !label) return;
+
+    let savedTheme = null;
+
+    try {
+      savedTheme = localStorage.getItem("portfolio-theme");
+    } catch (error) {
+      // Storage may be unavailable.
+    }
+
+    function applyTheme(theme) {
+      const isLight = theme === "light";
+
+      if (isLight) {
+        root.setAttribute("data-theme", "light");
+      } else {
+        root.removeAttribute("data-theme");
+      }
+
+      icon.textContent = isLight ? "☾" : "☀";
+      label.textContent = isLight ? "Dark mode" : "Light mode";
+
+      button.setAttribute(
+        "aria-label",
+        isLight ? "Switch to dark theme" : "Switch to light theme"
+      );
+
+      button.setAttribute("aria-pressed", String(isLight));
+    }
+
+    applyTheme(savedTheme === "light" ? "light" : "dark");
+
+    button.addEventListener("click", () => {
+      const nextTheme =
+        root.getAttribute("data-theme") === "light" ? "dark" : "light";
+
+      applyTheme(nextTheme);
+
+      try {
+        localStorage.setItem("portfolio-theme", nextTheme);
+      } catch (error) {
+        // Theme switching still works for this page session.
+      }
+    });
+  })();
+</script>
 </body>
 </html>
-
-
