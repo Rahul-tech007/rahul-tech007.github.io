@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -269,7 +269,7 @@
     }
 
     .cert-list li::before {
-      content: "✓";
+      content: "Γ£ô";
       flex: 0 0 auto;
       margin-right: 10px;
       color: var(--accent);
@@ -314,6 +314,24 @@
       .card { padding: 20px; }
       .contact-card { padding: 22px; }
     }
+
+  /* VCF Lifecycle Readiness Toolkit showcase â€” responsive, standalone styles */
+.vcf-showcase { margin-top: 1.5rem; }
+.vcf-showcase__intro { max-width: 900px; color: var(--muted, #b0bfd3); margin-bottom: 1.25rem; }
+.vcf-showcase__architecture, .vcf-showcase__panel { background: var(--panel, #111c2e); border: 1px solid var(--border, #26364d); border-radius: 14px; padding: clamp(16px, 2.5vw, 28px); margin: 18px 0; }
+.vcf-showcase__architecture img { width: 100%; height: auto; background: #f4f7fb; border-radius: 8px; }
+.vcf-showcase__caption { color: var(--muted, #b0bfd3); font-size: .9rem; margin-top: 10px; }
+.vcf-showcase__links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+.vcf-showcase__links a { display: inline-block; border: 1px solid var(--accent, #60a5fa); border-radius: 7px; padding: 10px 14px; font-weight: 700; }
+.vcf-showcase__links a.primary { background: var(--accent, #60a5fa); color: #08111f; }
+.vcf-showcase__scenario-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+.vcf-showcase__scenario { overflow: hidden; background: var(--panel, #111c2e); border: 1px solid var(--border, #26364d); border-radius: 12px; }
+.vcf-showcase__scenario img { width: 100%; height: auto; }
+.vcf-showcase__scenario-body { padding: 16px; }
+.vcf-showcase__scenario-body p { color: var(--muted, #b0bfd3); font-size: .92rem; }
+.vcf-showcase__scenario h4 { margin: 0 0 8px; }
+.vcf-showcase__scope-note { border-left: 4px solid #d6a13d; padding: 12px 16px; background: rgba(214,161,61,.09); color: var(--muted, #b0bfd3); border-radius: 0 8px 8px 0; }
+@media (max-width: 760px) { .vcf-showcase__scenario-grid { grid-template-columns: 1fr; } }
 
   </style>
 </head>
@@ -372,7 +390,7 @@
 
         <div class="about-text">
           <p>I am an enterprise infrastructure professional with 15+ years of experience across IT infrastructure, virtualization, platform operations, and infrastructure transformation.</p>
-          <p>My professional journey began with enterprise systems and Windows infrastructure, progressed into VMware technologies—including ESXi, vCenter, and vSphere—and expanded into complex virtualization environments and modern software-defined data center platforms.</p>
+          <p>My professional journey began with enterprise systems and Windows infrastructure, progressed into VMware technologiesΓÇöincluding ESXi, vCenter, and vSphereΓÇöand expanded into complex virtualization environments and modern software-defined data center platforms.</p>
           <p>Today, my primary focus is VMware Cloud Foundation (VCF) and enterprise infrastructure. I bring experience across virtualization platforms, infrastructure operations, migrations, automation, and technical problem-solving in enterprise environments.</p>
           <p>Alongside my VMware expertise, I work with AWS, Microsoft Azure, and Google Cloud, using tools such as Terraform, Ansible, and scripting to support infrastructure automation and modernization. My experience with Docker, Kubernetes, CI/CD, and observability further complements my infrastructure background.</p>
         </div>
@@ -470,18 +488,6 @@
         </p>
 
         <div class="grid">
-            <article class="card">
-            <h3>VCF Lifecycle Readiness Toolkit</h3>
-            <p>
-              Python · VMware Cloud Foundation · HTML · CSV · GitHub Actions
-              A checklist-driven planning tool for tracking lifecycle readiness evidence, identifying blockers, 
-              and generating interactive dashboards and Markdown reports.
-            </p>
-            <a href="https://github.com/Rahul-tech007/VCF-Lifecycle-Readiness-Toolkit"
-               target="_blank" rel="noopener noreferrer">
-              Explore repositories →
-            </a>
-          </article>
           
           <article class="card">
             <h3>Enterprise Infrastructure & Terraform</h3>
@@ -491,7 +497,7 @@
             </p>
             <a href="https://github.com/Rahul-tech007/TravelMemory-Terraform-Ansible"
                target="_blank" rel="noopener noreferrer">
-              Explore repositories →
+              Explore repositories ΓåÆ
             </a>
           </article>
 
@@ -503,7 +509,7 @@
             </p>
             <a href="https://github.com/Rahul-tech007/ECommerceApplication"
                target="_blank" rel="noopener noreferrer">
-              Explore repositories →
+              Explore repositories ΓåÆ
             </a>
           </article>
 
@@ -515,7 +521,7 @@
             </p>
             <a href="https://github.com/Rahul-tech007/Microservices-Task"
                target="_blank" rel="noopener noreferrer">
-              Explore repositories →
+              Explore repositories ΓåÆ
             </a>
           </article>
 
@@ -526,7 +532,7 @@
             </p>
             <a href="https://github.com/Rahul-tech007/GitOps-with-ArgoCD"
                target="_blank" rel="noopener noreferrer">
-              Explore repositories →
+              Explore repositories ΓåÆ
             </a>
           </article>
 
@@ -539,7 +545,7 @@
 
             <a href="https://github.com/Rahul-tech007/StreamingApp"
                target="_blank" rel="noopener noreferrer">
-              Explore repositories →
+              Explore repositories ΓåÆ
             </a>
           </article>
 
@@ -550,12 +556,64 @@
             </p>
             <a href="https://github.com/Rahul-tech007/flask-cicd-assignment"
                target="_blank" rel="noopener noreferrer">
-              Explore repositories →
+              Explore repositories ΓåÆ
             </a>
           </article>
         </div>
+<!-- VCF Lifecycle Readiness Toolkit showcase. Place inside the existing Projects section. -->
+<section class="vcf-showcase" id="vcf-lifecycle-toolkit" aria-labelledby="vcf-showcase-title">
+  <div class="vcf-showcase__panel">
+    <h3 id="vcf-showcase-title">VCF Lifecycle Readiness Toolkit</h3>
+    <p class="vcf-showcase__intro">
+      A Python-based, checklist-driven planning demonstration for tracking lifecycle readiness evidence,
+      surfacing blockers, and generating an interactive dashboard and Markdown reports.
+    </p>
+    <div class="tags" aria-label="Technologies">
+      <span class="tag">Python</span><span class="tag">VMware Cloud Foundation</span>
+      <span class="tag">CSV</span><span class="tag">HTML</span><span class="tag">GitHub Actions</span>
+    </div>
+    <div class="vcf-showcase__links">
+      <a class="primary" href="https://github.com/Rahul-tech007/VCF-Lifecycle-Readiness-Toolkit" target="_blank" rel="noopener noreferrer">Source repository â†—</a>
+      <a href="https://github.com/Rahul-tech007/VCF-Lifecycle-Readiness-Toolkit/blob/main/README.md" target="_blank" rel="noopener noreferrer">Project README â†—</a>
+      <a href="https://github.com/Rahul-tech007/VCF-Lifecycle-Readiness-Toolkit/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">Architecture notes â†—</a>
+      <a href="https://github.com/Rahul-tech007/VCF-Lifecycle-Readiness-Toolkit/blob/main/docs/scenario-demonstration.md" target="_blank" rel="noopener noreferrer">Scenario guide â†—</a>
+      <a href="https://github.com/Rahul-tech007/VCF-Lifecycle-Readiness-Toolkit/blob/main/docs/dashboard-guide.md" target="_blank" rel="noopener noreferrer">Dashboard guide â†—</a>
+    </div>
+  </div>
 
-        <div class="buttons">
+  <div class="vcf-showcase__architecture">
+    <h4>Conceptual VCF architecture</h4>
+    <img src="assets/vcf/vcf-conceptual-architecture.svg"
+         alt="Conceptual VMware Cloud Foundation diagram showing SDDC Manager, management domain, workload domains, vCenter, NSX, ESXi, storage and a separate planning tool."
+         loading="lazy">
+    <p class="vcf-showcase__caption">Conceptual illustration only; not a deployed topology or release-specific reference design.</p>
+  </div>
+
+  <div class="vcf-showcase__panel">
+    <h4>Dashboard and decision scenarios</h4>
+    <p class="vcf-showcase__intro">The sample scenarios demonstrate how checklist evidence changes the planning result.</p>
+    <img src="assets/vcf/dashboard-preview.png"
+         alt="Preview of the VCF lifecycle readiness dashboard with checklist counts, search, filters and report download."
+         loading="lazy" style="width:100%;height:auto;border-radius:8px;">
+    <div class="vcf-showcase__scenario-grid">
+      <article class="vcf-showcase__scenario">
+        <img src="assets/vcf/scenario-no-go.png" alt="NO-GO sample scenario showing missing blocking evidence." loading="lazy">
+        <div class="vcf-showcase__scenario-body"><h4>NO-GO</h4><p>Blocking planning evidence is missing.</p></div>
+      </article>
+      <article class="vcf-showcase__scenario">
+        <img src="assets/vcf/scenario-review.png" alt="REVIEW sample scenario with no blockers but one outstanding review item." loading="lazy">
+        <div class="vcf-showcase__scenario-body"><h4>REVIEW</h4><p>Blocking items are addressed in the sample, but review work remains.</p></div>
+      </article>
+      <article class="vcf-showcase__scenario">
+        <img src="assets/vcf/scenario-go.png" alt="GO sample scenario with no blocking items or review items in the synthetic checklist." loading="lazy">
+        <div class="vcf-showcase__scenario-body"><h4>GO</h4><p>The synthetic checklist satisfies the toolkit's documented planning rules.</p></div>
+      </article>
+    </div>
+  </div>
+  <p class="vcf-showcase__scope-note"><strong>Scope:</strong> This is a synthetic planning-evidence demonstration. It does not connect to SDDC Manager, vCenter, NSX, or ESXi and does not validate live compatibility, infrastructure health, upgrade eligibility, or operational approval.</p>
+</section>
+
+<div class="buttons">
           <a class="button primary"
              href="https://github.com/Rahul-tech007"
              target="_blank" rel="noopener noreferrer">
@@ -574,12 +632,12 @@
         </p>
 
         <ul class="cert-list">
-          <li>VMware Certified Associate – Data Center Virtualization (VCA-DCV)</li>
-          <li>Nutanix Certified Professional – Multicloud Infrastructure (NCP-MCI)</li>
+          <li>VMware Certified Associate ΓÇô Data Center Virtualization (VCA-DCV)</li>
+          <li>Nutanix Certified Professional ΓÇô Multicloud Infrastructure (NCP-MCI)</li>
           <li>Google Cloud Associate Cloud Engineer</li>
           <li>Microsoft Azure certifications</li>
           <li>Microsoft Certified Professional (MCP)</li>
-          <li>Microsoft Technology Associate – Networking Fundamentals</li>
+          <li>Microsoft Technology Associate ΓÇô Networking Fundamentals</li>
         </ul>
       </div>
     </section>
@@ -614,9 +672,9 @@
 
   <footer>
     <div class="container">
-      © <span id="year"></span> Rahul Bansal · VMware VCF & Enterprise Infrastructure
+      ┬⌐ <span id="year"></span> Rahul Bansal ┬╖ VMware VCF & Enterprise Infrastructure
       <br>
-      Built with HTML and CSS · Hosted on GitHub Pages
+      Built with HTML and CSS ┬╖ Hosted on GitHub Pages
     </div>
   </footer>
 
@@ -627,4 +685,5 @@
 
 </body>
 </html>
+
 
