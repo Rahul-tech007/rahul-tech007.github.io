@@ -493,6 +493,33 @@ a.button.primary:hover,
     color: #FFFFFF !important;
     background-color: #1E40AF;
 }
+
+/* Mobile header refinement */
+@media (max-width: 600px) {
+  header nav.container {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  header .brand {
+    font-size: 1.1rem;
+  }
+
+  header .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    width: 100%;
+    font-size: 0.85rem;
+  }
+
+  header .theme-toggle {
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+}
 </style>
 </head>
 
